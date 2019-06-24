@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Fixed from "./Components/Fixed";
-// import { Router } from "@reach/router";
+import { Router } from "@reach/router";
+import ArticlesList from "./Components/ArticlesList";
+
 // import StudentList from "./Components/StudentList";
 // import StudentInfo from "./Components/StudentInfo";
 
@@ -12,14 +14,14 @@ class App extends Component {
     return (
       <div className="App">
         <Fixed />
-        {/* <Router>
+        <Router>
           <ArticlesList path="/articles" />
-          <SingleArticle path="/articles/:article_id" />
+          {/* <SingleArticle path="/articles/:article_id" />
           <TopicsList path="/topics" />
           <SingleTopic path="/topics/:topic_id" />
           <UsersList path="/users" />
-          <SingleUser path="/users/:user_id" />
-        </Router> */}
+          <SingleUser path="/users/:user_id" /> */}
+        </Router>
       </div>
     );
   }
