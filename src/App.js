@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Fixed from "./Components/Fixed";
+// import { Router } from "@reach/router";
+// import StudentList from "./Components/StudentList";
+// import StudentInfo from "./Components/StudentInfo";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {};
+
+  render() {
+    // after the header which stays the same throughout, the page changes depending on the route
+    return (
+      <div className="App">
+        <Fixed />
+        {/* <Router>
+          <ArticlesList path="/articles" />
+          <SingleArticle path="/articles/:article_id" />
+          <TopicsList path="/topics" />
+          <SingleTopic path="/topics/:topic_id" />
+          <UsersList path="/users" />
+          <SingleUser path="/users/:user_id" />
+        </Router> */}
+      </div>
+    );
+  }
 }
 
 export default App;
