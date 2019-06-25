@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
 import toTimestamp from "../utils/index";
 import ReactTimeAgo from "react-time-ago";
+import * as api from "../api";
 
 class SingleArticle extends Component {
   state = {
@@ -36,21 +36,11 @@ class SingleArticle extends Component {
 
   componentDidMount = () => {
     // this mounts the individual article data when the path includes the id
-    this.getArticleById(this.props.article_id).then(article => {
+    api.getArticleById(this.props.article_id).then(article => {
       // id sent down on props as parametric endpoint on path
 
       this.setState({ article });
     });
-  };
-
-  getArticleById = article_id => {
-    return axios
-      .get(
-        `https://mattsncnewsproject.herokuapp.com/api/articles/${article_id}`
-      )
-      .then(({ data }) => {
-        return data.article;
-      });
   };
 }
 

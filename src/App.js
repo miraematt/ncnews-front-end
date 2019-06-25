@@ -4,9 +4,6 @@ import { Router } from "@reach/router";
 import ArticlesList from "./Components/ArticlesList";
 import SingleArticle from "./Components/SingleArticle";
 
-// import StudentList from "./Components/StudentList";
-// import StudentInfo from "./Components/StudentInfo";
-
 class App extends Component {
   state = {};
 
