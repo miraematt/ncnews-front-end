@@ -21,7 +21,19 @@ class ArticlesList extends Component {
 
   componentDidMount = () => {
     // calls the fetch function then sets state using the data received
-    api.getArticles().then(articles => {
+    const { topic, user } = this.props;
+    this.fetchArticles(topic, user);
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    const { topic, user } = this.props;
+    if (prevProps.topic !== topic || prevProps.user !== user) {
+      this.fetchArticles(topic, user);
+    }
+  };
+
+  fetchArticles = (topic, user) => {
+    api.getArticles(topic, user).then(articles => {
       this.setState({
         articles,
         total: articles.length

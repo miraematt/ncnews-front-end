@@ -3,6 +3,8 @@ import Fixed from "./Components/Fixed";
 import { Router } from "@reach/router";
 import ArticlesList from "./Components/ArticlesList";
 import SingleArticle from "./Components/SingleArticle";
+import TopicsList from "./Components/TopicsList";
+import UsersList from "./Components/UsersList";
 
 class App extends Component {
   state = {};
@@ -15,10 +17,10 @@ class App extends Component {
         <Router>
           <ArticlesList path="/articles" />
           <SingleArticle path="/articles/:article_id" />
-          {/* <TopicsList path="/topics" />
-          <SingleTopic path="/topics/:topic_id" />
+          <TopicsList path="/topics" />
+          <ArticlesList path="/topics/:topic" />
           <UsersList path="/users" />
-          <SingleUser path="/users/:user_id" /> */}
+          <ArticlesList path="/users/:user" />
         </Router>
       </div>
     );
