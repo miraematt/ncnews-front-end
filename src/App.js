@@ -7,13 +7,16 @@ import TopicsList from "./Components/TopicsList";
 import UsersList from "./Components/UsersList";
 
 class App extends Component {
-  state = {};
+  state = {
+    loggedInAs: "jessjelly"
+    // loggedInUser : {username:jess,avatar: ..., name:...}
+  };
 
   render() {
     // after the header which stays the same throughout, the page changes depending on the route
     return (
       <div className="App">
-        <Fixed />
+        <Fixed loggedInAs={this.state.loggedInAs} />
         <Router>
           <ArticlesList path="/articles" />
           <SingleArticle path="/articles/:article_id" />

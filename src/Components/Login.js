@@ -1,9 +1,9 @@
 import React from "react";
 
-const Login = () => {
+const Login = ({ loggedInAs }) => {
   return (
     <div className="login">
-      <p>Logged in as: Name</p>
+      <p>Logged in as: {loggedInAs}</p>
     </div>
   );
 };

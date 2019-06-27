@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import toTimestamp from "../utils/index";
 import ReactTimeAgo from "react-time-ago";
 import * as api from "../api";
+import CommentsList from "./CommentsList";
 
 class SingleArticle extends Component {
   state = {
@@ -16,6 +17,7 @@ class SingleArticle extends Component {
       votes,
       created_at,
       comment_count,
+
       title
     } = this.state.article;
     return (
@@ -30,6 +32,7 @@ class SingleArticle extends Component {
           <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
         </p>
         <p>Comments:{comment_count}</p>
+        <CommentsList article_id={this.props.article_id} />
       </div>
     );
   }

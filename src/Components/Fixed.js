@@ -5,12 +5,13 @@ import Login from "./Login";
 import Search from "./Search";
 import NewPost from "./Newpost";
 
-const Fixed = () => {
+const Fixed = ({ loggedInAs }) => {
+  // console.log(loggedInAs);
   return (
     <>
       <Header />
       <Navbar />
-      <Login />
+      <Login loggedInAs={loggedInAs} />
       <Search />
       <NewPost />
     </>

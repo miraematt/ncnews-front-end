@@ -6,10 +6,13 @@ const UserCard = ({ user, index }) => {
     <Link to={`/users/${user.username}`}>
       <li key={index}>
         <span className="username">{user.username}</span>
-        <br />
         Name: {user.name}
-        <br />
-        Avatar:{user.avatar_url}
+        Avatar:
+        <img
+          src={`${user.avatar_url}`}
+          alt="avatar"
+          height="50px"
+          width="50px"
         />
       </li>
     </Link>
