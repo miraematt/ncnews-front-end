@@ -5,13 +5,32 @@ import * as api from "../api";
 class ArticlesList extends Component {
   state = {
     articles: [],
-    sortBy: null
+    sortBy: null,
+    orderBy: "asc"
   };
 
   render() {
     return (
       <main className="infobox">
-        <button onClick={this.setSortBy}>Sort by votes</button>
+        Sort by:
+        <button onClick={() => this.setSortBy("created_at", "desc")}>
+          Oldest
+        </button>
+        <button onClick={() => this.setSortBy("created_at", "asc")}>
+          Most recent
+        </button>
+        <button onClick={() => this.setSortBy("comment_count", "asc")}>
+          Most comments
+        </button>
+        <button onClick={() => this.setSortBy("comment_count", "desc")}>
+          Fewest comments
+        </button>
+        <button onClick={() => this.setSortBy("votes", "asc")}>
+          Most votes
+        </button>
+        <button onClick={() => this.setSortBy("votes", "desc")}>
+          Fewest votes
+        </button>
         <ul>
           {this.state.articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
@@ -21,43 +40,33 @@ class ArticlesList extends Component {
     );
   }
 
-  setSortBy = sortBy => {
-    this.setState({ sortBy: "comment_count" });
+  setSortBy = (sortBy, orderBy) => {
+    this.setState({ sortBy, orderBy });
   };
 
   componentDidMount = () => {
-    // calls the fetch function which sets state using the data received
-
-    const { topic, user } = this.props;
-    const { sortBy } = this.state;
-    this.fetchArticles(topic, user, sortBy);
+    this.fetchArticles();
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    const { topic, user } = this.props;
-    const { sortBy } = this.state;
     const topicChange = prevProps.topic !== this.props.topic;
+    const userChange = prevProps.user !== this.props.user;
     const sortByChange = prevState.sortBy !== this.state.sortBy;
-    if (topicChange || sortByChange) {
-      this.fetchArticles(topic, user, sortBy);
+    const orderByChange = prevState.orderBy !== this.state.orderBy;
+    if (topicChange || userChange || sortByChange || orderByChange) {
+      this.fetchArticles();
     }
-    // const { topic, user } = this.props;
-    // const { sortBy } = this.state;
-    // console.log(prevProps, "prevProps");
-    // console.log(this.props, "this.props");
-    // if (prevProps !== this.props) {
-    // console.log("One down...");
-    // if (prevState.sortBy !== this.state.sortBy) {
-    // console.log("And one to go...");
-    // this.fetchArticles(topic, user, sortBy);
   };
 
-  fetchArticles = (topic, user, sortBy) => {
-    api.getArticles(topic, user, sortBy).then(articles => {
+  fetchArticles = () => {
+    const { topic, user } = this.props;
+    const { sortBy, orderBy } = this.state;
+    api.getArticles(topic, user, sortBy, orderBy).then(articles => {
       this.setState({
         articles,
         total: articles.length,
-        sortBy
+        sortBy,
+        orderBy
       });
     });
   };
