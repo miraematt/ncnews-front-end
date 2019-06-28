@@ -59,6 +59,10 @@ export const deleteCommentByCommentId = comment_id => {
   return request.delete(`/comments/${comment_id}`);
 };
 
+export const deleteArticleByArticleId = article_id => {
+  return request.delete(`/articles/${article_id}`);
+};
+
 export const patchVote = (id, increment, type) => {
   return request.patch(`/${type}s/${id}`, { inc_votes: increment });
   // no return because we don't need to use the data later

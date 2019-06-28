@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import * as api from "../api";
+
 class ArticleAdder extends Component {
   state = {
     title: "",
@@ -47,6 +49,15 @@ class ArticleAdder extends Component {
       </section>
     );
   }
+
+  addArticle = (username, slug, title, body) => {
+    // this func needs to be in ArticleList.js because we're updating the state in ArticleList.js
+    // we then pass this down to the ArticleAdder so that it can be invoked onSubmit
+    api.postArticle(username, slug, title, body).then(article => {
+      this.props.navigate(`/articles/${article.article_id}`);
+    });
+  };
+
   handleChange = event => {
     // handle event functions go in the class where they need to alter that classes state
     const { name, value } = event.target;
@@ -56,8 +67,8 @@ class ArticleAdder extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { body, title, slug, username } = this.state;
-    const { addArticle } = this.props;
-    addArticle(username, slug, title, body);
+    // const { addArticle } = this.props;
+    this.addArticle(username, slug, title, body);
     this.setState({
       body: "",
       title: "",

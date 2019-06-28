@@ -59,9 +59,6 @@ class CommentsList extends Component {
   };
 
   removeComment = commentIdToRemove => {
-    // console.log(commentToRemove.name === this.state.treasures[0].name);
-    // this func needs to be in App.js because we're updating the state in App.js
-    // we then pass this down to the TreasureList so that it can be invoked on 'delete' button click
     api.deleteCommentByCommentId(commentIdToRemove).then(() => {
       this.setState(prevState => {
         return {

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import * as api from "../api";
-import ArticleAdder from "./ArticleAdder";
 
 class ArticlesList extends Component {
   state = {
@@ -32,10 +31,6 @@ class ArticlesList extends Component {
         <button onClick={() => this.setSortBy("votes", "asc")}>
           Fewest votes
         </button>
-        <ArticleAdder
-          articles={this.state.articles}
-          addArticle={this.addArticle}
-        />
         <ul>
           {this.state.articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
@@ -44,14 +39,6 @@ class ArticlesList extends Component {
       </main>
     );
   }
-
-  addArticle = (username, slug, title, body) => {
-    // this func needs to be in ArticleList.js because we're updating the state in ArticleList.js
-    // we then pass this down to the ArticleAdder so that it can be invoked onSubmit
-    api.postArticle(username, slug, title, body).then(article => {
-      this.props.navigate(`/articles/${article.article_id}`);
-    });
-  };
 
   setSortBy = (sortBy, orderBy) => {
     this.setState({ sortBy, orderBy });
