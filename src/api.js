@@ -47,14 +47,19 @@ export const postCommentByArticleId = ({ newComment }, article_id) => {
     });
 };
 
+export const postArticle = (username, slug, title, body) => {
+  return request
+    .post(`/articles`, { username, slug, body, title })
+    .then(({ data }) => {
+      return data.article;
+    });
+};
+
 export const deleteCommentByCommentId = comment_id => {
   return request.delete(`/comments/${comment_id}`);
 };
 
-export const patchArticleVote = (article_id, increment) => {
-  return request
-    .patch(`/articles/${article_id}`, { inc_votes: increment })
-    .then(({ data }) => {
-      return data.article;
-    });
+export const patchVote = (id, increment, type) => {
+  return request.patch(`/${type}s/${id}`, { inc_votes: increment });
+  // no return because we don't need to use the data later
 };

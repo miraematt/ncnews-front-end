@@ -3,7 +3,6 @@ import * as api from "../api";
 
 class Voter extends Component {
   state = {
-    article: this.props,
     voteChange: 0
   };
 
@@ -25,8 +24,8 @@ class Voter extends Component {
 
   handleVote = increment => {
     const { voteChange } = this.state;
-    const { article_id } = this.props;
-    api.patchArticleVote(article_id, increment).then(article => {
+    const { id, type } = this.props;
+    api.patchVote(id, increment, type).then(() => {
       this.setState({
         voteChange: voteChange + increment
       });

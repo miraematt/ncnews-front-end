@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import * as api from "../api";
+import ArticleAdder from "./ArticleAdder";
 
 class ArticlesList extends Component {
   state = {
@@ -13,24 +14,28 @@ class ArticlesList extends Component {
     return (
       <main className="infobox">
         Sort by:
-        <button onClick={() => this.setSortBy("created_at", "desc")}>
+        <button onClick={() => this.setSortBy("created_at", "asc")}>
           Oldest
         </button>
-        <button onClick={() => this.setSortBy("created_at", "asc")}>
+        <button onClick={() => this.setSortBy("created_at", "desc")}>
           Most recent
         </button>
-        <button onClick={() => this.setSortBy("comment_count", "asc")}>
+        <button onClick={() => this.setSortBy("comment_count", "desc")}>
           Most comments
         </button>
-        <button onClick={() => this.setSortBy("comment_count", "desc")}>
+        <button onClick={() => this.setSortBy("comment_count", "asc")}>
           Fewest comments
         </button>
-        <button onClick={() => this.setSortBy("votes", "asc")}>
+        <button onClick={() => this.setSortBy("votes", "desc")}>
           Most votes
         </button>
-        <button onClick={() => this.setSortBy("votes", "desc")}>
+        <button onClick={() => this.setSortBy("votes", "asc")}>
           Fewest votes
         </button>
+        <ArticleAdder
+          articles={this.state.articles}
+          addArticle={this.addArticle}
+        />
         <ul>
           {this.state.articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
@@ -39,6 +44,14 @@ class ArticlesList extends Component {
       </main>
     );
   }
+
+  addArticle = (username, slug, title, body) => {
+    // this func needs to be in ArticleList.js because we're updating the state in ArticleList.js
+    // we then pass this down to the ArticleAdder so that it can be invoked onSubmit
+    api.postArticle(username, slug, title, body).then(article => {
+      this.props.navigate(`/articles/${article.article_id}`);
+    });
+  };
 
   setSortBy = (sortBy, orderBy) => {
     this.setState({ sortBy, orderBy });

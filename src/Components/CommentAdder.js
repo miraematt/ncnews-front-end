@@ -38,11 +38,12 @@ class CommentAdder extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { body } = this.state.newComment;
+    const { article_id } = this.props;
     this.props.addComment(
       {
         newComment: { body: body, username: "jessjelly" }
       },
-      this.props.article_id
+      article_id
     );
     this.setState({ newComment: { body: "", username: "jessjelly" } }); // resets boxes to empty after submission
   };

@@ -52,7 +52,7 @@ class CommentsList extends Component {
     api.postCommentByArticleId(newComment, article_id).then(comment => {
       this.setState(prevState => {
         return {
-          comments: [...prevState.comments, comment]
+          comments: [comment, ...prevState.comments]
         };
       });
     });

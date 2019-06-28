@@ -5,6 +5,7 @@ import ArticlesList from "./Components/ArticlesList";
 import SingleArticle from "./Components/SingleArticle";
 import TopicsList from "./Components/TopicsList";
 import UsersList from "./Components/UsersList";
+import ArticleAdder from "./Components/ArticleAdder";
 
 class App extends Component {
   state = {
@@ -13,17 +14,19 @@ class App extends Component {
   };
 
   render() {
+    const { loggedInAs } = this.state;
     // after the header which stays the same throughout, the page changes depending on the route
     return (
       <div className="App">
-        <Fixed loggedInAs={this.state.loggedInAs} />
+        <Fixed loggedInAs={loggedInAs} />
         <Router>
-          <ArticlesList path="/articles" />
+          <ArticlesList path="/articles" loggedInAs={loggedInAs} />
           <SingleArticle path="/articles/:article_id" />
           <TopicsList path="/topics" />
-          <ArticlesList path="/topics/:topic" />
+          <ArticlesList path="/topics/:topic" loggedInAs={loggedInAs} />
           <UsersList path="/users" />
-          <ArticlesList path="/users/:user" />
+          <ArticlesList path="/users/:user" loggedInAs={loggedInAs} />
+          <ArticleAdder path="/articles/post" loggedInAs={loggedInAs} />
         </Router>
       </div>
     );

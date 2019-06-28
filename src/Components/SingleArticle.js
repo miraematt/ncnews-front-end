@@ -27,7 +27,7 @@ class SingleArticle extends Component {
         <p>Topic:{topic}</p>
         <p>Title:{title}</p>
         <p>Article:{body}</p>
-        <Voter votes={votes} article_id={this.props.article_id} />
+        <Voter votes={votes} type="article" id={this.props.article_id} />
         <p>
           Time:{" "}
           <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />

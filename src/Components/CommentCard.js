@@ -2,8 +2,10 @@ import React from "react";
 // import { Link } from "@reach/router";
 import ReactTimeAgo from "react-time-ago";
 import toTimestamp from "../utils/index";
+import Voter from "./Voter";
 
 const CommentCard = ({ comment, removeComment }) => {
+  const { votes } = comment;
   return (
     // <Link to={`/articles/${article.article_id}/`}>
     <li key={comment.comment_id}>
@@ -11,7 +13,7 @@ const CommentCard = ({ comment, removeComment }) => {
       <br />
       Body: {comment.body}
       <br />
-      Likes: {comment.votes}
+      <Voter votes={votes} type="comment" id={comment.comment_id} />
       <br />
       Time:{" "}
       <ReactTimeAgo
