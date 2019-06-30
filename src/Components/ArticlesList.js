@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import * as api from "../api";
+import Error from "./Error";
 
 class ArticlesList extends Component {
   state = {
     articles: [],
     sortBy: null,
-    orderBy: "asc"
+    orderBy: "asc",
+    err: null
   };
 
   render() {
+    const { articles, err } = this.state;
+    if (err) {
+      return <Error err={err} />;
+    }
     return (
       <main className="infobox">
         Sort by:
@@ -32,7 +38,7 @@ class ArticlesList extends Component {
           Fewest votes
         </button>
         <ul>
-          {this.state.articles.map(article => {
+          {articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
           })}
         </ul>
@@ -61,14 +67,19 @@ class ArticlesList extends Component {
   fetchArticles = () => {
     const { topic, user } = this.props;
     const { sortBy, orderBy } = this.state;
-    api.getArticles(topic, user, sortBy, orderBy).then(articles => {
-      this.setState({
-        articles,
-        total: articles.length,
-        sortBy,
-        orderBy
+    api
+      .getArticles(topic, user, sortBy, orderBy)
+      .then(articles => {
+        this.setState({
+          articles,
+          total: articles.length,
+          sortBy,
+          orderBy
+        });
+      })
+      .catch(err => {
+        this.setState({ err });
       });
-    });
   };
 }
 

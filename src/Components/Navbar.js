@@ -4,7 +4,7 @@ import TopicsLink from "./TopicsLink";
 import UsersLink from "./UsersLink";
 import NewPostLink from "./NewPostLink";
 
-const Navbar = () => {
+const Navbar = ({ loggedInAs }) => {
   return (
     <nav className="navbar">
       <ul className="navlist">
@@ -18,7 +18,7 @@ const Navbar = () => {
           <UsersLink />
         </li>
         <li className="list-item">
-          <NewPostLink />
+          <NewPostLink loggedInAs={loggedInAs} />
         </li>
       </ul>
     </nav>

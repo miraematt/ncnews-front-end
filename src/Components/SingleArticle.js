@@ -5,10 +5,13 @@ import * as api from "../api";
 import CommentsList from "./CommentsList";
 import Voter from "./Voter";
 import { navigate } from "@reach/router";
+import DeleteButton from "./DeleteButton";
+import Error from "./Error";
 
 class SingleArticle extends Component {
   state = {
-    article: {}
+    article: {},
+    err: null
   };
 
   render() {
@@ -22,39 +25,59 @@ class SingleArticle extends Component {
 
       title
     } = this.state.article;
+    const { article_id, loggedInAs } = this.props;
+    const { err } = this.state;
+    if (err) return <Error err={err} />;
     return (
       <div>
         <p>Author:{author}</p>
         <p>Topic:{topic}</p>
         <p>Title:{title}</p>
         <p>Article:{body}</p>
-        <Voter votes={votes} type="article" id={this.props.article_id} />
-        <button onClick={() => this.removeArticle(this.props.article_id)}>
-          Delete
-        </button>
+        <Voter votes={votes} type="article" id={article_id} />
+        {loggedInAs === author && (
+          <DeleteButton remove={this.removeArticle} id={article_id} />
+        )}
         <p>
           Time:{" "}
           <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
         </p>
         <p>Comments:{comment_count}</p>
-        <CommentsList article_id={this.props.article_id} />
+        <CommentsList article_id={article_id} loggedInAs={loggedInAs} />
       </div>
     );
   }
 
   componentDidMount = () => {
-    // this mounts the individual article data when the path includes the id
-    api.getArticleById(this.props.article_id).then(article => {
-      // id sent down on props as parametric endpoint on path
-      article.comment_count = 0;
-      this.setState({ article });
-    });
+    api
+      .getArticleById(this.props.article_id)
+      .then(article => {
+        article.comment_count = 0;
+        this.setState({ article });
+      })
+      .catch(err => {
+        this.setState({
+          err
+        });
+      });
   };
 
   removeArticle = articleIdToRemove => {
-    api.deleteArticleByArticleId(articleIdToRemove).then(() => {
-      navigate(`/articles`);
-    });
+    const remove = window.confirm(
+      "Are you sure you want to delete this article?"
+    );
+    if (remove) {
+      api
+        .deleteArticleByArticleId(articleIdToRemove)
+        .then(() => {
+          navigate(`/articles`);
+        })
+        .catch(err => {
+          this.setState({
+            err
+          });
+        });
+    }
   };
 }
 

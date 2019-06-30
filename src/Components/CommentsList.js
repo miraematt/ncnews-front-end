@@ -8,12 +8,10 @@ class CommentsList extends Component {
     comments: []
   };
   render() {
+    const { article_id, loggedInAs } = this.props;
     return (
       <section className="commentsbox">
-        <CommentAdder
-          addComment={this.addComment}
-          article_id={this.props.article_id}
-        />
+        <CommentAdder addComment={this.addComment} article_id={article_id} />
         <ul>
           {this.state.comments.map(comment => {
             return (
@@ -21,6 +19,7 @@ class CommentsList extends Component {
                 comment={comment}
                 key={comment.comment_id}
                 removeComment={this.removeComment}
+                loggedInAs={loggedInAs}
               />
             );
           })}
@@ -30,10 +29,7 @@ class CommentsList extends Component {
   }
 
   componentDidMount = () => {
-    //   // calls the fetch function which sets state using the data received
-
     const { article_id } = this.props;
-
     this.fetchComments(article_id);
   };
 
@@ -47,8 +43,6 @@ class CommentsList extends Component {
   };
 
   addComment = (newComment, article_id) => {
-    // this func needs to be in Comment.js because we're updating the state in Comment.js
-    // we then pass this down to the CommentAdder so that it can be invoked onSubmit
     api.postCommentByArticleId(newComment, article_id).then(comment => {
       this.setState(prevState => {
         return {
@@ -59,15 +53,20 @@ class CommentsList extends Component {
   };
 
   removeComment = commentIdToRemove => {
-    api.deleteCommentByCommentId(commentIdToRemove).then(() => {
-      this.setState(prevState => {
-        return {
-          comments: prevState.comments.filter(
-            comment => comment.comment_id !== commentIdToRemove
-          )
-        };
+    const remove = window.confirm(
+      "Are you sure you want to delete this comment?"
+    );
+    if (remove) {
+      api.deleteCommentByCommentId(commentIdToRemove).then(() => {
+        this.setState(prevState => {
+          return {
+            comments: prevState.comments.filter(
+              comment => comment.comment_id !== commentIdToRemove
+            )
+          };
+        });
       });
-    });
+    }
   };
 }
 export default CommentsList;

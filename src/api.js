@@ -2,14 +2,13 @@ import axios from "axios";
 
 const request = axios.create({
   baseURL: "https://mattsncnewsproject.herokuapp.com/api/"
-  // baseURL: "http://localhost:9090/api/" use this for local testing
 });
 
 export const getArticles = (topic, user, sortBy, orderBy) => {
   return request
     .get("/articles", {
       params: { topic: topic, author: user, sort_by: sortBy, order: orderBy }
-    }) // author is the key for username on the articles API endpoint - this took ages to figure out!!!
+    })
     .then(({ data }) => {
       return data.articles;
     });
@@ -65,5 +64,4 @@ export const deleteArticleByArticleId = article_id => {
 
 export const patchVote = (id, increment, type) => {
   return request.patch(`/${type}s/${id}`, { inc_votes: increment });
-  // no return because we don't need to use the data later
 };

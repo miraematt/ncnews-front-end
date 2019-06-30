@@ -7,7 +7,7 @@ const Fixed = ({ loggedInAs }) => {
   return (
     <>
       <Header />
-      <Navbar />
+      <Navbar loggedInAs={loggedInAs} />
       <Login loggedInAs={loggedInAs} />
     </>
   );
