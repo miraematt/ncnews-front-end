@@ -85,38 +85,50 @@ header .title {
   background-color: #cfe9e3;
   border: 2px solid #ff0000;
   border-radius: 10px;
+  width: 90%;
+  max-width: 1100px;
+  min-height: 500px;
 }
-.infobox .titlesort {
+.infobox .topictitle {
+  padding: 1em;
+  font-size: 2em;
+}
+.infobox .listheader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 90%;
+  margin: 0 auto;
 }
-.infobox .titlesort h2 {
+.infobox .listheader h2 {
   padding: 1em;
   font-size: 2em;
+  width: 60%;
+  text-align: left;
 }
 
-.articlecard {
+.infocard {
   list-style: none;
-  border-bottom: 1px solid #072154;
 }
-.articlecard a {
+.infocard a {
   text-decoration: none;
   color: #072154;
 }
-.articlecard a .title {
+.infocard a .title {
   font-size: 1.25em;
 }
-.articlecard a:hover {
+.infocard a:hover {
   color: #ff0000;
 }
 
-.articleshort {
+.infoshort {
   padding: 1em;
   border-bottom: 1px solid #ff0000;
   width: 85%;
   margin: 0 auto;
+}
+.infoshort .topic {
+  text-transform: capitalize;
 }
 
 footer {

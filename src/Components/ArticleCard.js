@@ -6,7 +6,7 @@ import toTimestamp from "../utils/index";
 const ArticleCard = ({ article }) => {
   return (
     <Link to={`/articles/${article.article_id}`}>
-      <li className="articleshort" key={article.article_id}>
+      <li className="infoshort" key={article.article_id}>
         <span className="title">{article.title}</span>
         <br />
         By {article.author}

@@ -11,7 +11,8 @@ import Error from "./Error";
 class SingleArticle extends Component {
   state = {
     article: {},
-    err: null
+    err: null,
+    articleExists: false
   };
 
   render() {
@@ -22,29 +23,36 @@ class SingleArticle extends Component {
       votes,
       created_at,
       comment_count,
-
       title
     } = this.state.article;
     const { article_id, loggedInAs } = this.props;
-    const { err } = this.state;
+    const { err, articleExists } = this.state;
     if (err) return <Error err={err} />;
     return (
-      <div>
-        <p>Author:{author}</p>
-        <p>Topic:{topic}</p>
-        <p>Title:{title}</p>
-        <p>Article:{body}</p>
-        <Voter votes={votes} type="article" id={article_id} />
-        {loggedInAs === author && (
-          <DeleteButton remove={this.removeArticle} id={article_id} />
-        )}
-        <p>
-          Time:{" "}
-          <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
-        </p>
-        <p>Comments:{comment_count}</p>
-        <CommentsList article_id={article_id} loggedInAs={loggedInAs} />
-      </div>
+      articleExists && (
+        <div>
+          <p>Author:{author}</p>
+          <p>Topic:{topic}</p>
+          <p>Title:{title}</p>
+          <p>Article:{body}</p>
+          <Voter votes={votes} type="article" id={article_id} />
+          {loggedInAs === author && (
+            <DeleteButton remove={this.removeArticle} id={article_id} />
+          )}
+          <p>
+            Time:{" "}
+            <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
+          </p>
+          <p>Comments:{comment_count}</p>
+          {this.state.article && (
+            <CommentsList
+              article_id={article_id}
+              loggedInAs={loggedInAs}
+              articleExists={articleExists}
+            />
+          )}
+        </div>
+      )
     );
   }
 
@@ -53,11 +61,12 @@ class SingleArticle extends Component {
       .getArticleById(this.props.article_id)
       .then(article => {
         article.comment_count = 0;
-        this.setState({ article });
+        this.setState({ article, articleExists: true });
       })
       .catch(err => {
         this.setState({
-          err
+          err,
+          articleExists: false
         });
       });
   };

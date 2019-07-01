@@ -18,7 +18,7 @@ class ArticlesList extends Component {
     }
     return (
       <>
-        <div className="titlesort">
+        <div className="listheader">
           <h2>All Articles</h2>
           <div className="sortcat">
             <p>Date</p>
@@ -50,7 +50,7 @@ class ArticlesList extends Component {
             </div>
           </div>
         </div>
-        <ul className="articlecard">
+        <ul className="infocard">
           {articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
           })}

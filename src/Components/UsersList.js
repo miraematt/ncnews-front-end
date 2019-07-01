@@ -9,13 +9,16 @@ class UsersList extends Component {
 
   render() {
     return (
-      <main className="infobox">
-        <ul>
+      <>
+        <div>
+          <h2 class="topictitle">Users</h2>
+        </div>
+        <ul className="infocard">
           {this.state.users.map((user, index) => {
             return <UserCard user={user} key={index} />;
           })}
         </ul>
-      </main>
+      </>
     );
   }
 

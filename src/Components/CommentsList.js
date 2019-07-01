@@ -8,29 +8,31 @@ class CommentsList extends Component {
     comments: []
   };
   render() {
-    const { article_id, loggedInAs } = this.props;
+    const { article_id, loggedInAs, articleExists } = this.props;
     return (
-      <section className="commentsbox">
-        <CommentAdder addComment={this.addComment} article_id={article_id} />
-        <ul>
-          {this.state.comments.map(comment => {
-            return (
-              <CommentCard
-                comment={comment}
-                key={comment.comment_id}
-                removeComment={this.removeComment}
-                loggedInAs={loggedInAs}
-              />
-            );
-          })}
-        </ul>
-      </section>
+      articleExists && (
+        <section className="commentsbox">
+          <CommentAdder addComment={this.addComment} article_id={article_id} />
+          <ul>
+            {this.state.comments.map(comment => {
+              return (
+                <CommentCard
+                  comment={comment}
+                  key={comment.comment_id}
+                  removeComment={this.removeComment}
+                  loggedInAs={loggedInAs}
+                />
+              );
+            })}
+          </ul>
+        </section>
+      )
     );
   }
 
   componentDidMount = () => {
-    const { article_id } = this.props;
-    this.fetchComments(article_id);
+    const { article_id, articleExists } = this.props;
+    articleExists && this.fetchComments(article_id);
   };
 
   fetchComments = article_id => {
