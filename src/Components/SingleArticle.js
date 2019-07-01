@@ -7,6 +7,7 @@ import Voter from "./Voter";
 import { navigate } from "@reach/router";
 import DeleteButton from "./DeleteButton";
 import Error from "./Error";
+import Swal from "sweetalert2";
 
 class SingleArticle extends Component {
   state = {
@@ -33,7 +34,6 @@ class SingleArticle extends Component {
           <h2>Title:{title}</h2>
           <p>({topic})</p>
           <h3>By {author}</h3>
-
           <p className="articlebody">{body}</p>
           <Voter votes={votes} type="article" id={article_id} />
           <p>
@@ -71,21 +71,29 @@ class SingleArticle extends Component {
   };
 
   removeArticle = articleIdToRemove => {
-    const remove = window.confirm(
-      "Are you sure you want to delete this article?"
-    );
-    if (remove) {
-      api
-        .deleteArticleByArticleId(articleIdToRemove)
-        .then(() => {
-          navigate(`/articles`);
-        })
-        .catch(err => {
-          this.setState({
-            err
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(result => {
+      if (result.value) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        api
+          .deleteArticleByArticleId(articleIdToRemove)
+          .then(() => {
+            navigate(`/articles`);
+          })
+          .catch(err => {
+            this.setState({
+              err
+            });
           });
-        });
-    }
+      }
+    });
   };
 }
 

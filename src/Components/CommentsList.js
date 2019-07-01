@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CommentCard from "./CommentCard";
 import CommentAdder from "./CommentAdder";
 import * as api from "../api";
+import Swal from "sweetalert2";
 
 class CommentsList extends Component {
   state = {
@@ -55,20 +56,28 @@ class CommentsList extends Component {
   };
 
   removeComment = commentIdToRemove => {
-    const remove = window.confirm(
-      "Are you sure you want to delete this comment?"
-    );
-    if (remove) {
-      api.deleteCommentByCommentId(commentIdToRemove).then(() => {
-        this.setState(prevState => {
-          return {
-            comments: prevState.comments.filter(
-              comment => comment.comment_id !== commentIdToRemove
-            )
-          };
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(result => {
+      if (result.value) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        api.deleteCommentByCommentId(commentIdToRemove).then(() => {
+          this.setState(prevState => {
+            return {
+              comments: prevState.comments.filter(
+                comment => comment.comment_id !== commentIdToRemove
+              )
+            };
+          });
         });
-      });
-    }
+      }
+    });
   };
 }
 export default CommentsList;
