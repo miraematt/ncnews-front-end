@@ -251,6 +251,10 @@ header .title {
   padding: 2em;
   font-size: 1.25em;
 }
+.articleAdder p {
+  font-size: 1.25em;
+  padding: 0.25em 0;
+}
 
 .articleitem {
   display: block;
@@ -277,7 +281,7 @@ header .title {
 .bodyinput {
   height: 100px;
   width: 80%;
-  margin: 2em auto;
+  margin: 1em auto;
 }
 
 .sorry {

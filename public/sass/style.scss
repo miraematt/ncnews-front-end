@@ -279,6 +279,11 @@ header {
 .articleAdder {
   padding: 2em;
   font-size: 1.25em;
+
+  p {
+    font-size: 1.25em;
+    padding: 0.25em 0;
+  }
 }
 
 .articleitem {
@@ -307,7 +312,7 @@ header {
 .bodyinput {
   height: 100px;
   width: 80%;
-  margin: 2em auto;
+  margin: 1em auto;
 }
 
 .sorry {
