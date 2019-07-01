@@ -10,10 +10,11 @@ class CommentAdder extends Component {
   render() {
     const { body } = this.state.newComment;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="commentform" onSubmit={this.handleSubmit}>
         <label>
           Enter new comment here:
           <input
+            className="commentinput"
             type="text"
             name="body"
             placeholder="Write here"
@@ -22,7 +23,7 @@ class CommentAdder extends Component {
           />
         </label>
 
-        <button>Add Comment</button>
+        <button className="add">Add Comment</button>
       </form>
     );
   }

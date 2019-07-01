@@ -4,16 +4,12 @@ import { Link } from "@reach/router";
 const UserCard = ({ user, index }) => {
   return (
     <Link to={`/users/${user.username}`}>
-      <li key={index} className="infoshort">
-        <span className="topic title">{user.username}</span>
-        Name: {user.name}
-        Avatar:
-        <img
-          src={`${user.avatar_url}`}
-          alt="avatar"
-          height="50px"
-          width="50px"
-        />
+      <li key={index} className="infoshort userinfo">
+        <div className="avatar userdata">
+          <img src={`${user.avatar_url}`} alt="avatar" className="avatar-img" />
+        </div>
+        <span className="topic title userdata">{user.username}</span>
+        <p className="userdata">{user.name}</p>
       </li>
     </Link>
   );

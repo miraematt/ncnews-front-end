@@ -10,13 +10,21 @@ class Voter extends Component {
     const { voteChange } = this.state;
     const { votes } = this.props;
     return (
-      <div>
-        <button onClick={() => this.handleVote(1)} disabled={voteChange > 0}>
-          Vote up
+      <div className="likes">
+        <button
+          className="arrow"
+          onClick={() => this.handleVote(1)}
+          disabled={voteChange > 0}
+        >
+          {"\u2191"}
         </button>
         <p>Likes:{votes + voteChange}</p>
-        <button onClick={() => this.handleVote(-1)} disabled={voteChange < 0}>
-          Vote down
+        <button
+          className="arrow"
+          onClick={() => this.handleVote(-1)}
+          disabled={voteChange < 0}
+        >
+          {"\u2193"}
         </button>
       </div>
     );

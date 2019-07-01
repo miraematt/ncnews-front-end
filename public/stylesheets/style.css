@@ -60,12 +60,16 @@ header .title {
   align-items: center;
   padding: 0 1em;
   color: #ff0000;
+  width: 125px;
   font-size: 1.25em;
   background: none;
   border: none;
+  outline: none;
 }
 .navlinks .list-item .navbutton:hover {
   color: #072154;
+  background-color: #ffffff;
+  transition: 0.75s;
 }
 
 #quote {
@@ -119,6 +123,7 @@ header .title {
 }
 .infocard a:hover {
   color: #ff0000;
+  transition: 0.5s;
 }
 
 .infoshort {
@@ -127,8 +132,144 @@ header .title {
   width: 85%;
   margin: 0 auto;
 }
+.infoshort .avatar .avatar-img {
+  height: 75px;
+  width: 75px;
+  border: 1px solid #ff0000;
+  border-radius: 3px;
+}
 .infoshort .topic {
   text-transform: capitalize;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.userinfo .userdata {
+  width: 150px;
+}
+
+.button {
+  color: #ffffff;
+  font-size: 1em;
+  background-color: #072154;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  padding: 0.25em 0.75em;
+}
+.button:hover {
+  background-color: #ff0000;
+  border: 2px solid #072154;
+}
+
+.article {
+  padding: 2em;
+}
+.article h2 {
+  padding: 1em 0 0.5em 0;
+}
+.article h3 {
+  padding: 1em 0;
+}
+.article .articlebody {
+  text-align: left;
+}
+
+.likes {
+  padding: 1em;
+}
+
+.delete {
+  margin: 1em;
+}
+
+.arrow {
+  color: #072154;
+  font-size: 0.5em;
+  background-color: wheat;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  padding: 0.25em;
+  margin: 0.25em;
+}
+.arrow:hover {
+  border: 2px solid #072154;
+  transition: 0.5s;
+}
+
+.commentform {
+  padding: 2em;
+  font-size: 1em;
+}
+
+.add {
+  color: #ffffff;
+  font-size: 1em;
+  background-color: #072154;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  padding: 0.25em 0.75em;
+}
+.add:hover {
+  background-color: wheat;
+  color: #072154;
+  border: 2px solid #072154;
+}
+
+.commentinput {
+  margin: 1em;
+  font-size: 1em;
+  width: 50%;
+  padding: 0.25em;
+}
+
+.commentcard {
+  border-top: 1px solid #ff0000;
+  padding: 1em 0;
+  width: 80%;
+  margin: 0 auto;
+  list-style: none;
+}
+.commentcard h3 {
+  padding: 1em 0;
+}
+
+.articleAdder {
+  padding: 2em;
+  font-size: 1.25em;
+}
+
+.articleitem {
+  display: block;
+  margin: 0.5em 0;
+}
+
+.articleinput {
+  font-size: 1em;
+  outline: none;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+.bodyinput {
+  height: 100px;
+  width: 80%;
+  margin: 2em;
+}
+
+.sorry {
+  font-size: 3em;
+  text-align: center;
+  padding: 2em;
+}
+
+.errorinfo {
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 
 footer {

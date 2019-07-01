@@ -13,9 +13,10 @@ class ArticleAdder extends Component {
     return (
       <section className="articleAdder">
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Title:
+          <label className="articleitem">
+            <p>Title: </p>
             <input
+              className="articleinput"
               type="text"
               name="title"
               placeholder="Write here"
@@ -23,8 +24,8 @@ class ArticleAdder extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label>
-            Topic:
+          <label className="articleitem">
+            <p>Topic: </p>
             <select
               id="myList"
               name="slug"
@@ -36,9 +37,11 @@ class ArticleAdder extends Component {
               <option value="football">Football</option>
             </select>
           </label>
-          <label>
-            Body:
+
+          <label className="articleitem">
+            <p>Body: </p>
             <input
+              className="articleinput bodyinput"
               type="text"
               name="body"
               placeholder="Write here"
@@ -47,7 +50,7 @@ class ArticleAdder extends Component {
             />
           </label>
 
-          <button>Submit article</button>
+          <button className="add">Submit article</button>
         </form>
       </section>
     );

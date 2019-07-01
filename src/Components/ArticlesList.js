@@ -23,30 +23,52 @@ class ArticlesList extends Component {
           <div className="sortcat">
             <p>Date</p>
             <div className="updown">
-              <button onClick={() => this.setSortBy("created_at", "desc")}>
-                ▲
+              <button
+                className="arrow"
+                onClick={() => this.setSortBy("created_at", "desc")}
+              >
+                {"\u2191"}
               </button>
-              <button onClick={() => this.setSortBy("created_at", "asc")}>
-                ▼
+              <button
+                className="arrow"
+                onClick={() => this.setSortBy("created_at", "asc")}
+              >
+                {"\u2193"}
               </button>
             </div>
           </div>
           <div className="sortcat">
             <p>Comments</p>
             <div className="updown">
-              <button onClick={() => this.setSortBy("comment_count", "desc")}>
-                ▲
+              <button
+                className="arrow"
+                onClick={() => this.setSortBy("comment_count", "desc")}
+              >
+                {"\u2191"}
               </button>
-              <button onClick={() => this.setSortBy("comment_count", "asc")}>
-                ▼
+              <button
+                className="arrow"
+                onClick={() => this.setSortBy("comment_count", "asc")}
+              >
+                {"\u2193"}
               </button>
             </div>
           </div>
           <div className="sortcat">
             <p>Likes</p>
             <div className="updown">
-              <button onClick={() => this.setSortBy("votes", "desc")}>▲</button>
-              <button onClick={() => this.setSortBy("votes", "asc")}>▼</button>
+              <button
+                className="arrow"
+                onClick={() => this.setSortBy("votes", "desc")}
+              >
+                {"\u2191"}
+              </button>
+              <button
+                className="arrow"
+                onClick={() => this.setSortBy("votes", "asc")}
+              >
+                {"\u2193"}
+              </button>
             </div>
           </div>
         </div>

@@ -4,10 +4,14 @@ import { Link } from "@reach/router";
 const Error = ({ err }) => {
   return (
     <div>
-      <p>Sorry!</p>
-      {err ? <p>{err.response.data.msg}</p> : <p>Page Not Found</p>}
+      <p className="sorry">Sorry!</p>
+      {err ? (
+        <p className="errorinfo">{err.response.data.msg}</p>
+      ) : (
+        <p className="errorinfo">Page Not Found</p>
+      )}
       <Link to="/articles">
-        <button className="navbutton">Return to main page</button>
+        <button className="add">Return to main page</button>
       </Link>
     </div>
   );

@@ -7,14 +7,14 @@ import DeleteButton from "./DeleteButton";
 const CommentCard = ({ comment, removeComment, loggedInAs }) => {
   const { votes, comment_id, author, created_at, body } = comment;
   return (
-    <li key={comment_id}>
-      <span className="Author">{author}</span>
+    <li key={comment_id} className="commentcard">
+      <h3 className="author">{author}</h3>
       <br />
-      Body: {body}
+      {body}
       <br />
       <Voter votes={votes} type="comment" id={comment_id} />
+      <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
       <br />
-      Time: <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
       {loggedInAs === author && (
         <DeleteButton remove={removeComment} id={comment_id} />
       )}

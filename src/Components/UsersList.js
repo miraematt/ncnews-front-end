@@ -11,7 +11,7 @@ class UsersList extends Component {
     return (
       <>
         <div>
-          <h2 class="topictitle">Users</h2>
+          <h2 className="topictitle">Users</h2>
         </div>
         <ul className="infocard">
           {this.state.users.map((user, index) => {

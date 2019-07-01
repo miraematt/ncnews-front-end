@@ -74,14 +74,17 @@ header {
       padding: 0 1em;
       // text-decoration: none;
       color: $red;
-      // width: 100%;
+      width: 125px;
       font-size: 1.25em;
       background: none;
       border: none;
+      outline: none;
       // height and width 100% so fills li container
 
       &:hover {
         color: $dark-blue;
+        background-color: $white;
+        transition: 0.75s;
       }
     }
   }
@@ -142,6 +145,7 @@ header {
 
     &:hover {
       color: $red;
+      transition: 0.5s;
     }
   }
 }
@@ -152,9 +156,156 @@ header {
   width: 85%;
   margin: 0 auto;
 
+  .avatar {
+    .avatar-img {
+      height: 75px;
+      width: 75px;
+      border: 1px solid $red;
+      border-radius: 3px;
+    }
+  }
+
   .topic {
     text-transform: capitalize;
   }
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .userdata {
+    width: 150px;
+  }
+}
+
+.button {
+  color: $white;
+  font-size: 1em;
+  background-color: $dark-blue;
+  border-radius: 5px;
+  border: 2px solid $white;
+  padding: 0.25em 0.75em;
+
+  &:hover {
+    background-color: $red;
+    border: 2px solid $dark-blue;
+  }
+}
+
+.article {
+  padding: 2em;
+
+  h2 {
+    padding: 1em 0 0.5em 0;
+  }
+
+  h3 {
+    padding: 1em 0;
+  }
+
+  .articlebody {
+    text-align: left;
+  }
+}
+
+.likes {
+  padding: 1em;
+}
+
+.delete {
+  margin: 1em;
+}
+
+.arrow {
+  color: $dark-blue;
+  font-size: 0.5em;
+  background-color: wheat;
+  border-radius: 50%;
+  border: 2px solid $white;
+  padding: 0.25em;
+  margin: 0.25em;
+
+  &:hover {
+    border: 2px solid $dark-blue;
+    transition: 0.5s;
+  }
+}
+
+.commentform {
+  padding: 2em;
+  font-size: 1em;
+}
+
+.add {
+  color: $white;
+  font-size: 1em;
+  background-color: $dark-blue;
+  border-radius: 5px;
+  border: 2px solid $white;
+  padding: 0.25em 0.75em;
+
+  &:hover {
+    background-color: wheat;
+    color: $dark-blue;
+    border: 2px solid $dark-blue;
+  }
+}
+
+.commentinput {
+  margin: 1em;
+  font-size: 1em;
+  width: 50%;
+  padding: 0.25em;
+}
+
+.commentcard {
+  border-top: 1px solid $red;
+  padding: 1em 0;
+  width: 80%;
+  margin: 0 auto;
+  list-style: none;
+
+  h3 {
+    padding: 1em 0;
+  }
+}
+
+.articleAdder {
+  padding: 2em;
+  font-size: 1.25em;
+}
+
+.articleitem {
+  display: block;
+  margin: 0.5em 0;
+}
+
+.articleinput {
+  font-size: 1em;
+  outline: none;
+  border: 1px solid $red;
+  border-radius: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+.bodyinput {
+  height: 100px;
+  width: 80%;
+  margin: 2em;
+}
+
+.sorry {
+  font-size: 3em;
+  text-align: center;
+  padding: 2em;
+}
+
+.errorinfo {
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 
 footer {

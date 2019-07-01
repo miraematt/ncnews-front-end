@@ -22,7 +22,6 @@ class SingleArticle extends Component {
       body,
       votes,
       created_at,
-      comment_count,
       title
     } = this.state.article;
     const { article_id, loggedInAs } = this.props;
@@ -30,20 +29,20 @@ class SingleArticle extends Component {
     if (err) return <Error err={err} />;
     return (
       articleExists && (
-        <div>
-          <p>Author:{author}</p>
-          <p>Topic:{topic}</p>
-          <p>Title:{title}</p>
-          <p>Article:{body}</p>
+        <div class="article">
+          <h2>Title:{title}</h2>
+          <p>({topic})</p>
+          <h3>By {author}</h3>
+
+          <p className="articlebody">{body}</p>
           <Voter votes={votes} type="article" id={article_id} />
+          <p>
+            <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
+          </p>
           {loggedInAs === author && (
             <DeleteButton remove={this.removeArticle} id={article_id} />
           )}
-          <p>
-            Time:{" "}
-            <ReactTimeAgo date={toTimestamp(created_at)} timeStyle="twitter" />
-          </p>
-          <p>Comments:{comment_count}</p>
+
           {this.state.article && (
             <CommentsList
               article_id={article_id}
