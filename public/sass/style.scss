@@ -226,10 +226,15 @@ header {
   border: 2px solid $white;
   padding: 0.25em;
   margin: 0.25em;
+  outline: none;
 
   &:hover {
     border: 2px solid $dark-blue;
     transition: 0.5s;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
