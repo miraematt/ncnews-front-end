@@ -19,6 +19,7 @@ class ArticleAdder extends Component {
               className="articleinput"
               type="text"
               name="title"
+              autocomplete="off"
               placeholder="Write here"
               value={title}
               onChange={this.handleChange}
@@ -45,10 +46,11 @@ class ArticleAdder extends Component {
           </label>
 
           <label className="articleitem">
-            <p>Body: </p>
+            <p>Article: </p>
             <input
               className="articleinput bodyinput"
               type="text"
+              autocomplete="off"
               name="body"
               placeholder="Write here"
               value={body}

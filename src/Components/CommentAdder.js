@@ -15,6 +15,7 @@ class CommentAdder extends Component {
           Leave a comment:
           <input
             className="commentinput"
+            autocomplete="off"
             type="text"
             name="body"
             placeholder="Write here"

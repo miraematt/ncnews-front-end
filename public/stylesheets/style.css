@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+*:focus {
+  outline: 1px solid #ff0000;
+}
 
 html {
   text-align: center;
