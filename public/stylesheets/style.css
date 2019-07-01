@@ -110,6 +110,10 @@ header .title {
   width: 60%;
   text-align: left;
 }
+.infobox .listheader .sortcat {
+  display: flex;
+  align-items: center;
+}
 
 .infocard {
   list-style: none;
@@ -193,10 +197,15 @@ header .title {
   border: 2px solid #ffffff;
   padding: 0.25em;
   margin: 0.25em;
+  outline: none;
 }
 .arrow:hover {
   border: 2px solid #072154;
   transition: 0.5s;
+}
+.arrow:focus {
+  outline: none;
+  border: 2px solid #072154;
 }
 
 .commentform {
@@ -221,8 +230,10 @@ header .title {
 .commentinput {
   margin: 1em;
   font-size: 1em;
-  width: 50%;
+  width: 30%;
+  min-width: 150px;
   padding: 0.25em;
+  text-align: center;
 }
 
 .commentcard {
@@ -246,6 +257,14 @@ header .title {
   margin: 0.5em 0;
 }
 
+#myList {
+  font-size: 1em;
+  border: 1px solid #ff0000;
+}
+#myList:focus {
+  outline: none;
+}
+
 .articleinput {
   font-size: 1em;
   outline: none;
@@ -258,7 +277,7 @@ header .title {
 .bodyinput {
   height: 100px;
   width: 80%;
-  margin: 2em;
+  margin: 2em auto;
 }
 
 .sorry {
@@ -275,6 +294,115 @@ header .title {
 footer {
   grid-column: 1/span 2;
   padding: 2em 0;
+}
+
+@media only screen and (max-width: 900px) {
+  header .title {
+    font-size: 3em;
+  }
+
+  .navlinks {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    align-items: center;
+  }
+  .navlinks .list-item {
+    height: 100%;
+  }
+  .navlinks .list-item .navbutton {
+    height: 100%;
+    align-items: center;
+    padding: 0 0.5em;
+    color: #ff0000;
+    width: 85px;
+    font-size: 1em;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  .navlinks .list-item .navbutton:hover {
+    color: #ffffff;
+    background-color: #072154;
+    transition: 0.75s;
+  }
+
+  #quote,
+.login {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .grid {
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+  }
+
+  .infobox {
+    grid-column: 1/span 1;
+  }
+
+  footer {
+    grid-column: 1/span 1;
+    padding: 2em 0;
+  }
+
+  header {
+    border-bottom: none;
+  }
+
+  #quote,
+.login {
+    padding: 0.5em;
+  }
+
+  .navlinks {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    align-items: center;
+  }
+  .navlinks .list-item {
+    height: 100%;
+  }
+  .navlinks .list-item .navbutton {
+    height: 100%;
+    align-items: center;
+    padding: 1em 0.25em;
+    color: #ff0000;
+    width: 95px;
+    font-size: 1.25em;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  .navlinks .list-item .navbutton:hover {
+    color: #ffffff;
+    background-color: #072154;
+    transition: 0.75s;
+  }
+
+  .infobox .listheader {
+    display: flex;
+    flex-direction: column;
+    margin: 0.25em 0.5em;
+  }
+  .infobox .listheader h2 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .userinfo {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

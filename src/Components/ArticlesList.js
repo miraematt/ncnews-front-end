@@ -21,7 +21,7 @@ class ArticlesList extends Component {
         <div className="listheader">
           <h2>All Articles</h2>
           <div className="sortcat">
-            <p>Date</p>
+            <p>Date </p>
             <div className="updown">
               <button
                 className="arrow"
@@ -36,9 +36,9 @@ class ArticlesList extends Component {
                 {"\u2193"}
               </button>
             </div>
-          </div>
-          <div className="sortcat">
-            <p>Comments</p>
+            {/* </div>
+          <div className="sortcat"> */}
+            <p>Comments </p>
             <div className="updown">
               <button
                 className="arrow"
@@ -53,9 +53,9 @@ class ArticlesList extends Component {
                 {"\u2193"}
               </button>
             </div>
-          </div>
-          <div className="sortcat">
-            <p>Likes</p>
+            {/* </div>
+          <div className="sortcat"> */}
+            <p>Likes </p>
             <div className="updown">
               <button
                 className="arrow"

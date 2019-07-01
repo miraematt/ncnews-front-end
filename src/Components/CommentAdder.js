@@ -12,7 +12,7 @@ class CommentAdder extends Component {
     return (
       <form className="commentform" onSubmit={this.handleSubmit}>
         <label>
-          Enter new comment here:
+          Leave a comment:
           <input
             className="commentinput"
             type="text"

@@ -21,9 +21,7 @@ html {
   display: grid;
   width: 100%;
   grid-template-rows: auto auto auto auto;
-  // banner photo will remain a fixed size
   grid-template-columns: 1fr 1fr;
-  // this ensures 50% for title and navigation
   justify-items: center;
 }
 
@@ -59,27 +57,20 @@ header {
   margin: 0 auto;
   list-style: none;
   align-items: center;
-  // //pushes navlinks to the right of the page
-  // margin-right: 10%;
 
   .list-item {
     height: 100%;
-    // display: flex;
-    // position: relative;
 
     .navbutton {
-      // display: flex;
       height: 100%;
       align-items: center;
       padding: 0 1em;
-      // text-decoration: none;
       color: $red;
       width: 125px;
       font-size: 1.25em;
       background: none;
       border: none;
       outline: none;
-      // height and width 100% so fills li container
 
       &:hover {
         color: $white;
@@ -128,6 +119,11 @@ header {
       font-size: 2em;
       width: 60%;
       text-align: left;
+    }
+
+    .sortcat {
+      display: flex;
+      align-items: center;
     }
   }
 }
@@ -235,6 +231,7 @@ header {
 
   &:focus {
     outline: none;
+    border: 2px solid $dark-blue;
   }
 }
 
@@ -261,8 +258,10 @@ header {
 .commentinput {
   margin: 1em;
   font-size: 1em;
-  width: 50%;
+  width: 30%;
+  min-width: 150px;
   padding: 0.25em;
+  text-align: center;
 }
 
 .commentcard {
@@ -287,6 +286,15 @@ header {
   margin: 0.5em 0;
 }
 
+#myList {
+  font-size: 1em;
+  border: 1px solid $red;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .articleinput {
   font-size: 1em;
   outline: none;
@@ -299,7 +307,7 @@ header {
 .bodyinput {
   height: 100px;
   width: 80%;
-  margin: 2em;
+  margin: 2em auto;
 }
 
 .sorry {
@@ -318,6 +326,123 @@ footer {
   padding: 2em 0;
 }
 
-// font-family: 'Alfa Slab One', cursive;
-// font-family: 'Kaushan Script', cursive;
-// font-family: 'Cousine', monospace;
+@media only screen and (max-width: 900px) {
+  header {
+    .title {
+      font-size: 3em;
+    }
+  }
+
+  .navlinks {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    align-items: center;
+
+    .list-item {
+      height: 100%;
+
+      .navbutton {
+        height: 100%;
+        align-items: center;
+        padding: 0 0.5em;
+        color: $red;
+        width: 85px;
+        font-size: 1em;
+        background: none;
+        border: none;
+        outline: none;
+
+        &:hover {
+          color: $white;
+          background-color: $dark-blue;
+          transition: 0.75s;
+        }
+      }
+    }
+  }
+
+  #quote,
+  .login {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .grid {
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+  }
+
+  .infobox {
+    grid-column: 1 / span 1;
+  }
+
+  footer {
+    grid-column: 1 / span 1;
+    padding: 2em 0;
+  }
+
+  header {
+    border-bottom: none;
+  }
+
+  #quote,
+  .login {
+    padding: 0.5em;
+  }
+
+  .navlinks {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    align-items: center;
+
+    .list-item {
+      height: 100%;
+
+      .navbutton {
+        height: 100%;
+        align-items: center;
+        padding: 1em 0.25em;
+        color: $red;
+        width: 95px;
+        font-size: 1.25em;
+        background: none;
+        border: none;
+        outline: none;
+
+        &:hover {
+          color: $white;
+          background-color: $dark-blue;
+          transition: 0.75s;
+        }
+      }
+    }
+  }
+
+  .infobox {
+    .listheader {
+      display: flex;
+      flex-direction: column;
+      margin: 0.25em 0.5em;
+
+      h2 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+    }
+  }
+
+  .userinfo {
+    flex-direction: column;
+  }
+}

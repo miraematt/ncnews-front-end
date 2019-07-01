@@ -32,9 +32,15 @@ class ArticleAdder extends Component {
               value={slug}
               onChange={this.handleChange}
             >
-              <option value="coding">Coding</option>
-              <option value="cooking">Cooking</option>
-              <option value="football">Football</option>
+              <option class="dropdown" value="coding">
+                Coding
+              </option>
+              <option class="dropdown" value="cooking">
+                Cooking
+              </option>
+              <option class="dropdown" value="football">
+                Football
+              </option>
             </select>
           </label>
 
