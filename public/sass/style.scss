@@ -82,8 +82,8 @@ header {
       // height and width 100% so fills li container
 
       &:hover {
-        color: $dark-blue;
-        background-color: $white;
+        color: $white;
+        background-color: $dark-blue;
         transition: 0.75s;
       }
     }

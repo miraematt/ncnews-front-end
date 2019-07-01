@@ -67,8 +67,8 @@ header .title {
   outline: none;
 }
 .navlinks .list-item .navbutton:hover {
-  color: #072154;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #072154;
   transition: 0.75s;
 }
 
