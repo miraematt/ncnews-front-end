@@ -6,12 +6,11 @@ import toTimestamp from "../utils/index";
 const ArticleCard = ({ article }) => {
   return (
     <Link to={`/articles/${article.article_id}`}>
-      <li key={article.article_id}>
+      <li className="articleshort" key={article.article_id}>
         <span className="title">{article.title}</span>
         <br />
-        Author: {article.author}
-        <br />
-        Time:{" "}
+        By {article.author}
+        <br />{" "}
         <ReactTimeAgo
           date={toTimestamp(article.created_at)}
           timeStyle="twitter"

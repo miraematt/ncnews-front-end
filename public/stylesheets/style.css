@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: wheat;
+  color: #072154;
+}
+
+.grid {
+  font-family: "Noto Sans", sans-serif;
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+header,
+.navsection {
+  background-color: #cfe9e3;
+  border-bottom: 2px solid #ff0000;
+}
+
+header {
+  width: 100%;
+}
+header .title {
+  width: 100%;
+  font-size: 5em;
+  text-shadow: 5px 1px white;
+  margin: 0.25em 0 0.25em 0;
+  font-family: "Alfa Slab One", cursive;
+}
+
+.navsection {
+  width: 100%;
+  height: 100%;
+}
+
+.navlinks {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  align-items: center;
+}
+.navlinks .list-item {
+  height: 100%;
+}
+.navlinks .list-item .navbutton {
+  height: 100%;
+  align-items: center;
+  padding: 0 1em;
+  color: #ff0000;
+  font-size: 1.25em;
+  background: none;
+  border: none;
+}
+.navlinks .list-item .navbutton:hover {
+  color: #072154;
+}
+
+#quote {
+  font-family: "Kaushan Script", cursive;
+  color: #ff0000;
+  font-size: 1.25em;
+  padding: 1em 0;
+}
+
+.login {
+  font-size: 1.5em;
+  padding: 1em 0;
+}
+
+.infobox {
+  grid-column: 1/span 2;
+  background-color: #cfe9e3;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+}
+.infobox .titlesort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+}
+.infobox .titlesort h2 {
+  padding: 1em;
+  font-size: 2em;
+}
+
+.articlecard {
+  list-style: none;
+  border-bottom: 1px solid #072154;
+}
+.articlecard a {
+  text-decoration: none;
+  color: #072154;
+}
+.articlecard a .title {
+  font-size: 1.25em;
+}
+.articlecard a:hover {
+  color: #ff0000;
+}
+
+.articleshort {
+  padding: 1em;
+  border-bottom: 1px solid #ff0000;
+  width: 85%;
+  margin: 0 auto;
+}
+
+footer {
+  grid-column: 1/span 2;
+  padding: 2em 0;
+}
+
+/*# sourceMappingURL=style.css.map */

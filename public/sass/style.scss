@@ -1,0 +1,153 @@
+$dark-blue: #072154;
+$light-blue: #dfe7ff;
+$red: #ff0000;
+$white: #ffffff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: wheat;
+  color: $dark-blue;
+}
+
+.grid {
+  font-family: "Noto Sans", sans-serif;
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto auto auto auto;
+  // banner photo will remain a fixed size
+  grid-template-columns: 1fr 1fr;
+  // this ensures 50% for title and navigation
+  justify-items: center;
+}
+
+header,
+.navsection {
+  background-color: rgb(207, 233, 227);
+  border-bottom: 2px solid $red;
+}
+
+header {
+  width: 100%;
+
+  .title {
+    width: 100%;
+    font-size: 5em;
+    text-shadow: 5px 1px white;
+    margin: 0.25em 0 0.25em 0;
+    font-family: "Alfa Slab One", cursive;
+  }
+}
+
+.navsection {
+  width: 100%;
+  height: 100%;
+}
+
+.navlinks {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  align-items: center;
+  // //pushes navlinks to the right of the page
+  // margin-right: 10%;
+
+  .list-item {
+    height: 100%;
+    // display: flex;
+    // position: relative;
+
+    .navbutton {
+      // display: flex;
+      height: 100%;
+      align-items: center;
+      padding: 0 1em;
+      // text-decoration: none;
+      color: $red;
+      // width: 100%;
+      font-size: 1.25em;
+      background: none;
+      border: none;
+      // height and width 100% so fills li container
+
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+#quote {
+  font-family: "Kaushan Script", cursive;
+  color: $red;
+  font-size: 1.25em;
+  padding: 1em 0;
+}
+
+.login {
+  font-size: 1.5em;
+  padding: 1em 0;
+}
+
+.infobox {
+  grid-column: 1 / span 2;
+  background-color: rgb(207, 233, 227);
+  border: 2px solid $red;
+  border-radius: 10px;
+
+  .titlesort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+
+    h2 {
+      padding: 1em;
+      font-size: 2em;
+    }
+  }
+}
+
+.articlecard {
+  list-style: none;
+  border-bottom: 1px solid $dark-blue;
+
+  a {
+    text-decoration: none;
+    color: $dark-blue;
+
+    .title {
+      font-size: 1.25em;
+    }
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.articleshort {
+  padding: 1em;
+  border-bottom: 1px solid $red;
+  width: 85%;
+  margin: 0 auto;
+}
+
+footer {
+  grid-column: 1 / span 2;
+  padding: 2em 0;
+}
+
+// font-family: 'Alfa Slab One', cursive;
+// font-family: 'Kaushan Script', cursive;
+// font-family: 'Cousine', monospace;

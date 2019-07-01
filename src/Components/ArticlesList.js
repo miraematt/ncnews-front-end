@@ -17,32 +17,45 @@ class ArticlesList extends Component {
       return <Error err={err} />;
     }
     return (
-      <main className="infobox">
-        Sort by:
-        <button onClick={() => this.setSortBy("created_at", "asc")}>
-          Oldest
-        </button>
-        <button onClick={() => this.setSortBy("created_at", "desc")}>
-          Most recent
-        </button>
-        <button onClick={() => this.setSortBy("comment_count", "desc")}>
-          Most comments
-        </button>
-        <button onClick={() => this.setSortBy("comment_count", "asc")}>
-          Fewest comments
-        </button>
-        <button onClick={() => this.setSortBy("votes", "desc")}>
-          Most votes
-        </button>
-        <button onClick={() => this.setSortBy("votes", "asc")}>
-          Fewest votes
-        </button>
-        <ul>
+      <>
+        <div className="titlesort">
+          <h2>All Articles</h2>
+          <div className="sortcat">
+            <p>Date</p>
+            <div className="updown">
+              <button onClick={() => this.setSortBy("created_at", "desc")}>
+                ▲
+              </button>
+              <button onClick={() => this.setSortBy("created_at", "asc")}>
+                ▼
+              </button>
+            </div>
+          </div>
+          <div className="sortcat">
+            <p>Comments</p>
+            <div className="updown">
+              <button onClick={() => this.setSortBy("comment_count", "desc")}>
+                ▲
+              </button>
+              <button onClick={() => this.setSortBy("comment_count", "asc")}>
+                ▼
+              </button>
+            </div>
+          </div>
+          <div className="sortcat">
+            <p>Likes</p>
+            <div className="updown">
+              <button onClick={() => this.setSortBy("votes", "desc")}>▲</button>
+              <button onClick={() => this.setSortBy("votes", "asc")}>▼</button>
+            </div>
+          </div>
+        </div>
+        <ul className="articlecard">
           {articles.map(article => {
             return <ArticleCard article={article} key={article.article_id} />;
           })}
         </ul>
-      </main>
+      </>
     );
   }
 

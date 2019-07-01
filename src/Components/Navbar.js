@@ -6,8 +6,8 @@ import NewPostLink from "./NewPostLink";
 
 const Navbar = ({ loggedInAs }) => {
   return (
-    <nav className="navbar">
-      <ul className="navlist">
+    <nav className="navsection">
+      <ul className="navlinks" role="navigation">
         <li className="list-item">
           <ArticlesLink />
         </li>
