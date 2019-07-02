@@ -16,7 +16,7 @@ class Voter extends Component {
           onClick={() => this.handleVote(1)}
           disabled={voteChange > 0}
         >
-          {"\u2191"}
+          {"\u25B2"}
         </button>
         <p>{votes + voteChange}</p>
         <button
@@ -24,7 +24,7 @@ class Voter extends Component {
           onClick={() => this.handleVote(-1)}
           disabled={voteChange < 0}
         >
-          {"\u2193"}
+          {"\u25BC"}
         </button>
       </div>
     );

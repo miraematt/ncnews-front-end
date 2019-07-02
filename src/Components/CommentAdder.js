@@ -19,7 +19,7 @@ class CommentAdder extends Component {
             type="text"
             name="body"
             placeholder="Write here"
-            value={body} // necessary so that the input box *always* reflects what is in state because state changes with each character inputted
+            value={body}
             onChange={this.handleChange}
           />
         </label>
@@ -30,7 +30,6 @@ class CommentAdder extends Component {
   }
 
   handleChange = event => {
-    // handle event functions go in the class where they need to alter that classes state
     const { name, value } = event.target;
     this.setState({
       newComment: { [name]: value }
@@ -47,7 +46,7 @@ class CommentAdder extends Component {
       },
       article_id
     );
-    this.setState({ newComment: { body: "", username: "jessjelly" } }); // resets boxes to empty after submission
+    this.setState({ newComment: { body: "", username: "jessjelly" } });
   };
 }
 

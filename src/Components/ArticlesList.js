@@ -27,13 +27,13 @@ class ArticlesList extends Component {
                 className="arrow"
                 onClick={() => this.setSortBy("created_at", "desc")}
               >
-                {"\u2191"}
+                {"\u25B2"}
               </button>
               <button
                 className="arrow"
                 onClick={() => this.setSortBy("created_at", "asc")}
               >
-                {"\u2193"}
+                {"\u25BC"}
               </button>
             </div>
             {/* </div>
@@ -44,13 +44,13 @@ class ArticlesList extends Component {
                 className="arrow"
                 onClick={() => this.setSortBy("comment_count", "desc")}
               >
-                {"\u2191"}
+                {"\u25B2"}
               </button>
               <button
                 className="arrow"
                 onClick={() => this.setSortBy("comment_count", "asc")}
               >
-                {"\u2193"}
+                {"\u25BC"}
               </button>
             </div>
             {/* </div>
@@ -61,13 +61,13 @@ class ArticlesList extends Component {
                 className="arrow"
                 onClick={() => this.setSortBy("votes", "desc")}
               >
-                {"\u2191"}
+                {"\u25B2"}
               </button>
               <button
                 className="arrow"
                 onClick={() => this.setSortBy("votes", "asc")}
               >
-                {"\u2193"}
+                {"\u25BC"}
               </button>
             </div>
           </div>
