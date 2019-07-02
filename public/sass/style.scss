@@ -392,13 +392,31 @@ footer {
     padding: 2em 0;
   }
 
-  header {
+  header,
+  .navsection {
     border-bottom: none;
+  }
+
+  .header {
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  #quote {
+    grid-row: 2;
+    width: 100%;
+    border-bottom: 2px solid $red;
+    background-color: rgb(207, 233, 227);
   }
 
   #quote,
   .login {
-    padding: 0.5em;
+    padding: 1em;
+  }
+
+  .navsection {
+    background-color: wheat;
   }
 
   .navlinks {
