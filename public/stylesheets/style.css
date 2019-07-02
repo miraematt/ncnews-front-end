@@ -4,14 +4,14 @@
   padding: 0;
 }
 *:focus {
-  outline: 1px solid #ff0000;
+  outline: 1px solid #7a0303;
 }
 
 html {
   text-align: center;
   font-family: sans-serif;
-  background-color: wheat;
-  color: #072154;
+  background-color: #6c7a89;
+  color: #354649;
 }
 
 .grid {
@@ -25,8 +25,8 @@ html {
 
 header,
 .navsection {
-  background-color: #cfe9e3;
-  border-bottom: 2px solid #ff0000;
+  background-color: #e0e7e9;
+  border-bottom: 2px solid #7a0303;
 }
 
 header {
@@ -62,7 +62,7 @@ header .title {
   height: 100%;
   align-items: center;
   padding: 0 1em;
-  color: #ff0000;
+  color: #7a0303;
   width: 125px;
   font-size: 1.25em;
   background: none;
@@ -70,14 +70,14 @@ header .title {
   outline: none;
 }
 .navlinks .list-item .navbutton:hover {
-  color: #ffffff;
-  background-color: #072154;
+  color: #e0e7e9;
+  background-color: #354649;
   transition: 0.75s;
 }
 
 #quote {
   font-family: "Kaushan Script", cursive;
-  color: #ff0000;
+  color: #7a0303;
   font-size: 1.25em;
   padding: 1em 0;
 }
@@ -85,12 +85,13 @@ header .title {
 .login {
   font-size: 1.5em;
   padding: 1em 0;
+  color: #e0e7e9;
 }
 
 .infobox {
   grid-column: 1/span 2;
-  background-color: #cfe9e3;
-  border: 2px solid #ff0000;
+  background-color: #e0e7e9;
+  border: 2px solid #7a0303;
   border-radius: 10px;
   width: 90%;
   max-width: 1100px;
@@ -123,26 +124,26 @@ header .title {
 }
 .infocard a {
   text-decoration: none;
-  color: #072154;
+  color: #354649;
 }
 .infocard a .title {
   font-size: 1.25em;
 }
 .infocard a:hover {
-  color: #ff0000;
+  color: #7a0303;
   transition: 0.5s;
 }
 
 .infoshort {
   padding: 1em;
-  border-bottom: 1px solid #ff0000;
+  border-bottom: 1px solid #7a0303;
   width: 85%;
   margin: 0 auto;
 }
 .infoshort .avatar .avatar-img {
   height: 75px;
   width: 75px;
-  border: 1px solid #ff0000;
+  border: 1px solid #7a0303;
   border-radius: 3px;
 }
 .infoshort .topic {
@@ -159,16 +160,16 @@ header .title {
 }
 
 .button {
-  color: #ffffff;
+  color: #e0e7e9;
   font-size: 1em;
-  background-color: #072154;
+  background-color: #354649;
   border-radius: 5px;
-  border: 2px solid #ffffff;
+  border: 2px solid #e0e7e9;
   padding: 0.25em 0.75em;
 }
 .button:hover {
-  background-color: #ff0000;
-  border: 2px solid #072154;
+  background-color: #7a0303;
+  border: 2px solid #354649;
 }
 
 .article {
@@ -190,22 +191,22 @@ header .title {
 }
 
 .arrow {
-  color: #072154;
+  color: #e0e7e9;
   font-size: 0.5em;
-  background-color: wheat;
+  background-color: #6c7a89;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 2px solid #e0e7e9;
   padding: 0.25em;
   margin: 0.25em;
   outline: none;
 }
 .arrow:hover {
-  border: 2px solid #072154;
+  border: 2px solid #354649;
   transition: 0.5s;
 }
 .arrow:focus {
   outline: none;
-  border: 2px solid #072154;
+  border: 2px solid #354649;
 }
 
 .commentform {
@@ -214,17 +215,17 @@ header .title {
 }
 
 .add {
-  color: #ffffff;
+  color: #e0e7e9;
   font-size: 1em;
-  background-color: #072154;
+  background-color: #354649;
   border-radius: 5px;
-  border: 2px solid #ffffff;
+  border: 2px solid #e0e7e9;
   padding: 0.25em 0.75em;
 }
 .add:hover {
-  background-color: wheat;
-  color: #072154;
-  border: 2px solid #072154;
+  background-color: #6c7a89;
+  color: #e0e7e9;
+  border: 2px solid #354649;
 }
 
 .commentinput {
@@ -237,7 +238,7 @@ header .title {
 }
 
 .commentcard {
-  border-top: 1px solid #ff0000;
+  border-top: 1px solid #7a0303;
   padding: 1em 0;
   width: 80%;
   margin: 0 auto;
@@ -263,7 +264,7 @@ header .title {
 
 #myList {
   font-size: 1em;
-  border: 1px solid #ff0000;
+  border: 1px solid #7a0303;
 }
 #myList:focus {
   outline: none;
@@ -272,7 +273,7 @@ header .title {
 .articleinput {
   font-size: 1em;
   outline: none;
-  border: 1px solid #ff0000;
+  border: 1px solid #7a0303;
   border-radius: 5px;
   text-align: center;
   width: 50%;
@@ -322,7 +323,7 @@ footer {
     height: 100%;
     align-items: center;
     padding: 0 0.5em;
-    color: #ff0000;
+    color: #7a0303;
     width: 85px;
     font-size: 1em;
     background: none;
@@ -330,8 +331,8 @@ footer {
     outline: none;
   }
   .navlinks .list-item .navbutton:hover {
-    color: #ffffff;
-    background-color: #072154;
+    color: #e0e7e9;
+    background-color: #354649;
     transition: 0.75s;
   }
 
@@ -367,8 +368,8 @@ footer {
   #quote {
     grid-row: 2;
     width: 100%;
-    border-bottom: 2px solid #ff0000;
-    background-color: #cfe9e3;
+    border-bottom: 2px solid #7a0303;
+    background-color: #e0e7e9;
   }
 
   #quote,
@@ -377,7 +378,7 @@ footer {
   }
 
   .navsection {
-    background-color: wheat;
+    background-color: #6c7a89;
   }
 
   .navlinks {
@@ -397,7 +398,7 @@ footer {
     height: 100%;
     align-items: center;
     padding: 1em 0.25em;
-    color: #ff0000;
+    color: #7a0303;
     width: 95px;
     font-size: 1.25em;
     background: none;
@@ -405,8 +406,8 @@ footer {
     outline: none;
   }
   .navlinks .list-item .navbutton:hover {
-    color: #ffffff;
-    background-color: #072154;
+    color: #e0e7e9;
+    background-color: #354649;
     transition: 0.75s;
   }
 

@@ -1,7 +1,8 @@
-$dark-blue: #072154;
-$light-blue: #dfe7ff;
-$red: #ff0000;
-$white: #ffffff;
+$dark: #354649;
+$mid: #6c7a89;
+$dark-red: #a3c6c4;
+$light: #e0e7e9;
+$dark-red: #7a0303;
 
 * {
   box-sizing: border-box;
@@ -9,15 +10,15 @@ $white: #ffffff;
   padding: 0;
 
   &:focus {
-    outline: 1px solid $red;
+    outline: 1px solid $dark-red;
   }
 }
 
 html {
   text-align: center;
   font-family: sans-serif;
-  background-color: wheat;
-  color: $dark-blue;
+  background-color: $mid;
+  color: $dark;
 }
 
 .grid {
@@ -31,8 +32,8 @@ html {
 
 header,
 .navsection {
-  background-color: rgb(207, 233, 227);
-  border-bottom: 2px solid $red;
+  background-color: $light;
+  border-bottom: 2px solid $dark-red;
 }
 
 header {
@@ -69,7 +70,7 @@ header {
       height: 100%;
       align-items: center;
       padding: 0 1em;
-      color: $red;
+      color: $dark-red;
       width: 125px;
       font-size: 1.25em;
       background: none;
@@ -77,8 +78,8 @@ header {
       outline: none;
 
       &:hover {
-        color: $white;
-        background-color: $dark-blue;
+        color: $light;
+        background-color: $dark;
         transition: 0.75s;
       }
     }
@@ -87,7 +88,7 @@ header {
 
 #quote {
   font-family: "Kaushan Script", cursive;
-  color: $red;
+  color: $dark-red;
   font-size: 1.25em;
   padding: 1em 0;
 }
@@ -95,12 +96,13 @@ header {
 .login {
   font-size: 1.5em;
   padding: 1em 0;
+  color: $light;
 }
 
 .infobox {
   grid-column: 1 / span 2;
-  background-color: rgb(207, 233, 227);
-  border: 2px solid $red;
+  background-color: $light;
+  border: 2px solid $dark-red;
   border-radius: 10px;
   width: 90%;
   max-width: 1100px;
@@ -137,14 +139,14 @@ header {
 
   a {
     text-decoration: none;
-    color: $dark-blue;
+    color: $dark;
 
     .title {
       font-size: 1.25em;
     }
 
     &:hover {
-      color: $red;
+      color: $dark-red;
       transition: 0.5s;
     }
   }
@@ -152,7 +154,7 @@ header {
 
 .infoshort {
   padding: 1em;
-  border-bottom: 1px solid $red;
+  border-bottom: 1px solid $dark-red;
   width: 85%;
   margin: 0 auto;
 
@@ -160,7 +162,7 @@ header {
     .avatar-img {
       height: 75px;
       width: 75px;
-      border: 1px solid $red;
+      border: 1px solid $dark-red;
       border-radius: 3px;
     }
   }
@@ -181,16 +183,16 @@ header {
 }
 
 .button {
-  color: $white;
+  color: $light;
   font-size: 1em;
-  background-color: $dark-blue;
+  background-color: $dark;
   border-radius: 5px;
-  border: 2px solid $white;
+  border: 2px solid $light;
   padding: 0.25em 0.75em;
 
   &:hover {
-    background-color: $red;
-    border: 2px solid $dark-blue;
+    background-color: $dark-red;
+    border: 2px solid $dark;
   }
 }
 
@@ -215,23 +217,23 @@ header {
 }
 
 .arrow {
-  color: $dark-blue;
+  color: $light;
   font-size: 0.5em;
-  background-color: wheat;
+  background-color: $mid;
   border-radius: 50%;
-  border: 2px solid $white;
+  border: 2px solid $light;
   padding: 0.25em;
   margin: 0.25em;
   outline: none;
 
   &:hover {
-    border: 2px solid $dark-blue;
+    border: 2px solid $dark;
     transition: 0.5s;
   }
 
   &:focus {
     outline: none;
-    border: 2px solid $dark-blue;
+    border: 2px solid $dark;
   }
 }
 
@@ -241,17 +243,17 @@ header {
 }
 
 .add {
-  color: $white;
+  color: $light;
   font-size: 1em;
-  background-color: $dark-blue;
+  background-color: $dark;
   border-radius: 5px;
-  border: 2px solid $white;
+  border: 2px solid $light;
   padding: 0.25em 0.75em;
 
   &:hover {
-    background-color: wheat;
-    color: $dark-blue;
-    border: 2px solid $dark-blue;
+    background-color: $mid;
+    color: $light;
+    border: 2px solid $dark;
   }
 }
 
@@ -265,7 +267,7 @@ header {
 }
 
 .commentcard {
-  border-top: 1px solid $red;
+  border-top: 1px solid $dark-red;
   padding: 1em 0;
   width: 80%;
   margin: 0 auto;
@@ -293,7 +295,7 @@ header {
 
 #myList {
   font-size: 1em;
-  border: 1px solid $red;
+  border: 1px solid $dark-red;
 
   &:focus {
     outline: none;
@@ -303,7 +305,7 @@ header {
 .articleinput {
   font-size: 1em;
   outline: none;
-  border: 1px solid $red;
+  border: 1px solid $dark-red;
   border-radius: 5px;
   text-align: center;
   width: 50%;
@@ -355,7 +357,7 @@ footer {
         height: 100%;
         align-items: center;
         padding: 0 0.5em;
-        color: $red;
+        color: $dark-red;
         width: 85px;
         font-size: 1em;
         background: none;
@@ -363,8 +365,8 @@ footer {
         outline: none;
 
         &:hover {
-          color: $white;
-          background-color: $dark-blue;
+          color: $light;
+          background-color: $dark;
           transition: 0.75s;
         }
       }
@@ -406,8 +408,8 @@ footer {
   #quote {
     grid-row: 2;
     width: 100%;
-    border-bottom: 2px solid $red;
-    background-color: rgb(207, 233, 227);
+    border-bottom: 2px solid $dark-red;
+    background-color: $light;
   }
 
   #quote,
@@ -416,7 +418,7 @@ footer {
   }
 
   .navsection {
-    background-color: wheat;
+    background-color: $mid;
   }
 
   .navlinks {
@@ -436,7 +438,7 @@ footer {
         height: 100%;
         align-items: center;
         padding: 1em 0.25em;
-        color: $red;
+        color: $dark-red;
         width: 95px;
         font-size: 1.25em;
         background: none;
@@ -444,8 +446,8 @@ footer {
         outline: none;
 
         &:hover {
-          color: $white;
-          background-color: $dark-blue;
+          color: $light;
+          background-color: $dark;
           transition: 0.75s;
         }
       }
