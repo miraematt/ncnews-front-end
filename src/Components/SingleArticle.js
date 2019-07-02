@@ -31,8 +31,8 @@ class SingleArticle extends Component {
     return (
       articleExists && (
         <div class="article">
-          <h2>Title:{title}</h2>
-          <p>({topic})</p>
+          <h2>{title}</h2>
+          <p className="topic">({topic})</p>
           <h3>By {author}</h3>
           <p className="articlebody">{body}</p>
           <Voter votes={votes} type="article" id={article_id} />

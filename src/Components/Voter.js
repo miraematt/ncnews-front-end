@@ -18,7 +18,7 @@ class Voter extends Component {
         >
           {"\u2191"}
         </button>
-        <p>Likes:{votes + voteChange}</p>
+        <p>{votes + voteChange}</p>
         <button
           className="arrow"
           onClick={() => this.handleVote(-1)}

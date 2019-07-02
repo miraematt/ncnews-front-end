@@ -7,7 +7,7 @@ const TopicCard = ({ topic, index }) => {
       <li key={index} className="infoshort">
         <span className="topic title">{topic.slug}</span>
         <br />
-        Description: {topic.description}
+        {topic.description}
         <br />
       </li>
     </Link>
