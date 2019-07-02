@@ -19,7 +19,7 @@ class ArticleAdder extends Component {
               className="articleinput"
               type="text"
               name="title"
-              autocomplete="off"
+              autoComplete="off"
               placeholder="Write here"
               value={title}
               onChange={this.handleChange}
@@ -33,13 +33,13 @@ class ArticleAdder extends Component {
               value={slug}
               onChange={this.handleChange}
             >
-              <option class="dropdown" value="coding">
+              <option className="dropdown" value="coding">
                 Coding
               </option>
-              <option class="dropdown" value="cooking">
+              <option className="dropdown" value="cooking">
                 Cooking
               </option>
-              <option class="dropdown" value="football">
+              <option className="dropdown" value="football">
                 Football
               </option>
             </select>
@@ -50,7 +50,7 @@ class ArticleAdder extends Component {
             <input
               className="articleinput bodyinput"
               type="text"
-              autocomplete="off"
+              autoComplete="off"
               name="body"
               placeholder="Write here"
               value={body}

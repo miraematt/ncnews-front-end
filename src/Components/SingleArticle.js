@@ -30,7 +30,7 @@ class SingleArticle extends Component {
     if (err) return <Error err={err} />;
     return (
       articleExists && (
-        <div class="article">
+        <div className="article">
           <h2>{title}</h2>
           <p className="topic">({topic})</p>
           <h3>By {author}</h3>
