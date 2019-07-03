@@ -19,6 +19,7 @@ class CommentAdder extends Component {
             type="text"
             name="body"
             placeholder="Write here"
+            required
             value={body}
             onChange={this.handleChange}
           />
