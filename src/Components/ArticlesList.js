@@ -7,7 +7,7 @@ class ArticlesList extends Component {
   state = {
     articles: [],
     sortBy: null,
-    orderBy: "asc",
+    orderBy: "desc",
     err: null
   };
 

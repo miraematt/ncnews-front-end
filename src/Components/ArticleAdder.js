@@ -21,6 +21,7 @@ class ArticleAdder extends Component {
               name="title"
               autoComplete="off"
               placeholder="Write here"
+              required
               value={title}
               onChange={this.handleChange}
             />
@@ -53,6 +54,7 @@ class ArticleAdder extends Component {
               autoComplete="off"
               name="body"
               placeholder="Write here"
+              required
               value={body}
               onChange={this.handleChange}
             />
@@ -79,7 +81,7 @@ class ArticleAdder extends Component {
     event.preventDefault();
 
     const { body, title, slug, username } = this.state;
-    if (body && title && this.addArticle(username, slug, title, body)) {
+    if (this.addArticle(username, slug, title, body)) {
       this.setState({
         body: "",
         title: "",
