@@ -1,4 +1,4 @@
-#NC News front-end code and full-stack deployment
+# NC News front-end code and full-stack deployment
 
 This app is the finished version of a full-stack NorthCoders project to produce a news website, called NC News.
 
